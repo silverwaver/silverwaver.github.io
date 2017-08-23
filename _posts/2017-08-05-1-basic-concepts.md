@@ -46,9 +46,9 @@ mathjax: true
 	- 事实上，描述主题的词语往往相对出现次数较少。
 	- 类似"albeit"的词语在文档中出现并不会增加它多次出现的可能性；但是如果文章提到“chukker”，则很可能会提到"first chukker","second chukker"...(反复出现)。
 
-	** TF.IDF ** 用于度量给定词语在文档中反复出现程度的指标，其中TF是词项频率（Term Frequency），IDF是逆文档频率（Inverse Document Frequency）。
+	TF.IDF用于度量给定词语在文档中反复出现程度的指标，其中TF是词项频率（Term Frequency），IDF是逆文档频率（Inverse Document Frequency）。
 
-	假定有n篇文档，$ f_{ij} $ 为词项 $ i $ 在文档 $ j $ 中出现的频率，则$ TF_{ij}$ 定义为：
+	假定有N篇文档，$ f_{ij} $ 为词项 $ i $ 在文档 $ j $ 中出现的频率，则$ TF_{ij}$ 定义为：
 	$$
 	TF_{ij} = \frac{f_{ij}}{max_k f_{ij}}
 	$$
@@ -56,10 +56,10 @@ mathjax: true
 
 	假设词项i在n篇文档中出现，那么词项i的IDF定义如下：
 	$$
-	IDF_i = log_2 \frac{n}n_i
+	IDF_i = log_2 \frac{N}{n_i}
 	$$
 
-	于是，词项i中文档集中的得分被定义为 $ TF_ij x IDF_i $，具有最高TF.IDF得分的词项通常是刻画文档主题的最佳词项。
+	于是，词项i中文档集中的得分被定义为 $ TF_{ij} \times IDF_i $，具有最高TF.IDF得分的词项通常是刻画文档主题的最佳词项。
 
 - 哈希函数
 - 二级存储器及对算法运行时间的影响
